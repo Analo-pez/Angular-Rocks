@@ -1,5 +1,8 @@
 .pageDetail {
     margin: 10%;
+    @media (min-width: 780px) {
+        margin: 5%;
+    }
     &__results {
         &--video {
             height: 300px;
