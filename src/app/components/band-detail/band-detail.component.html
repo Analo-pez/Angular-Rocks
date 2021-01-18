@@ -1,10 +1,10 @@
 <main class="pageDetail">
     <div class="card mb-3 pageDetail__results">
-        <iframe class="pageDetail__results--video" [src]="videoUrl | domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        <iframe class="pageDetail__results--video" [src]="bandId.link| domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
         </iframe>
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">{{bandId.name}}</h5>
+            <p class="card-text">{{bandId.description}}</p>
             <a routerLink="/app-list-bands">
                 << Back </a>
         </div>

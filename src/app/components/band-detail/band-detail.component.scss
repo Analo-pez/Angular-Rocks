@@ -1,13 +1,13 @@
 .pageDetail {
-    margin: 15%;
+    margin: 10%;
     &__results {
         &--video {
             height: 300px;
             @media (min-width: 500px) {
-                height: 500px;
+                height: 400px;
             }
             @media (min-width: 780px) {
-                height: 700px;
+                height: 500px;
             }
         }
     }

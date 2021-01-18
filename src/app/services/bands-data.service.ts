@@ -13,4 +13,8 @@ export class BandsDataService {
   getBand(): Band[] {
     return BAND;
   }
+  getId(id: number) {
+    return BAND[id];
+  }
+
 }

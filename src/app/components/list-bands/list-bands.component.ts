@@ -20,4 +20,5 @@ export class ListBandsComponent implements OnInit {
     this.bands = this.dataService.getBand();
   }
 
+
 }

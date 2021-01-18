@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
-    path: 'app-band-detail',
+    path: 'app-band-detail/:id',
     component: BandDetailComponent
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ListBandsComponent,
     // children: [
     //   {
-    //     path: '/:id', component: BandDetailComponent
+    //     path: ':id', component: BandDetailComponent
     //   },
     // ]
   }
