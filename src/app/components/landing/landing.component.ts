@@ -12,8 +12,4 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enterResult() {
-    console.log('hola')
-  }
-
 }

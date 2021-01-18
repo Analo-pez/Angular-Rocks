@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { InMemoryDataService } from '../../services/in-memory-data.service';
+import { BandsDataService } from '../../services/bands-data.service';
+import { Band } from '../../models/band';
+
 
 @Component({
   selector: 'app-list-bands',
   templateUrl: './list-bands.component.html',
-  styleUrls: ['./list-bands.component.scss']
+  styleUrls: ['./list-bands.component.scss'],
+  providers: [BandsDataService]
 })
 export class ListBandsComponent implements OnInit {
+  bands: Band[];
 
-  rockBands: any = [{}];
 
-  constructor() { }
-  // private bandsService: InMemoryDataService
+  constructor(private dataService: BandsDataService) { }
+
 
   ngOnInit(): void {
-    console.log(this.rockBands)
+    this.bands = this.dataService.getBand();
   }
 
 }

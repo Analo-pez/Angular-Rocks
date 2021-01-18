@@ -4,14 +4,22 @@
     align-items: center;
     margin: 30px;
     &__title {
+        text-transform: uppercase;
         padding: 30px;
     }
     &__results {
-        @media (min-width: 600px) {
+        &--card {
+            margin: 15px;
+            border: 2px solid blue;
+        }
+        @media (min-width: 500px) {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-bottom: 100px;
+        }
+        @media (min-width: 780px) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 }

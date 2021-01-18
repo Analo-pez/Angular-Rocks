@@ -3,11 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { ListBandsComponent } from './components/list-bands/list-bands.component';
 import { LandingComponent } from './components/landing/landing.component'
 import { HttpClientModule } from '@angular/common/http';
+import { BandDetailComponent } from './components/band-detail/band-detail.component';
 
 
 
@@ -15,13 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ListBandsComponent,
-    LandingComponent
+    LandingComponent,
+    BandDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
