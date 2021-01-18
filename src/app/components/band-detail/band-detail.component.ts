@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandDetailComponent implements OnInit {
 
+  videoUrl: string = 'https://www.youtube.com/embed/SdpGG0V93Eo';
+
   constructor() { }
 
   ngOnInit(): void {

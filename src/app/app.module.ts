@@ -7,6 +7,7 @@ import { ListBandsComponent } from './components/list-bands/list-bands.component
 import { LandingComponent } from './components/landing/landing.component'
 import { HttpClientModule } from '@angular/common/http';
 import { BandDetailComponent } from './components/band-detail/band-detail.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
     AppComponent,
     ListBandsComponent,
     LandingComponent,
-    BandDetailComponent
+    BandDetailComponent,
+    DomseguroPipe,
   ],
   imports: [
     BrowserModule,
