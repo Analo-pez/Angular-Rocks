@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InMemoryDataService } from '../../services/in-memory-data.service';
 
 @Component({
   selector: 'app-list-bands',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListBandsComponent implements OnInit {
 
+  rockBands: any = [{}];
+
   constructor() { }
+  // private bandsService: InMemoryDataService
 
   ngOnInit(): void {
+    console.log(this.rockBands)
   }
 
 }
