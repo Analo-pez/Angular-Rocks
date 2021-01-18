@@ -4,11 +4,10 @@
     </h1>
     <section class="pageList__results">
         <div class="card pageList__results--card" style="width: 18rem;" *ngFor="let band of bands">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title">{{band.name}}</h5>
-                <p class="card-text">List number: {{band.id}}</p>
-                <a href="#" class="btn btn-primary" routerLink="/app-band-detail">More info</a>
+                <h5 class="card-title">{{band.id}}. {{band.name}}</h5>
+                <p class="card-text"></p>
+                <button class="btn btn-primary" routerLink="/app-band-detail">More info</button>
             </div>
         </div>
     </section>
