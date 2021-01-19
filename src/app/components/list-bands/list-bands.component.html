@@ -16,10 +16,9 @@
     <h1 class="pageList__title">
         Rock bands list
     </h1>
-    <!-- <app-search></app-search> -->
     <section class="pageList__results">
 
-        <app-result [band]="band" *ngFor="let band of bands, index as i" [routerLink]="['/app-band-detail', i ]"></app-result>
+        <app-result [band]="band" *ngFor="let band of bands, index as i"></app-result>
 
     </section>
 </main>

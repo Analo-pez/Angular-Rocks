@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BandsDataService } from '../../services/bands-data.service';
+
 
 @Component({
   selector: 'app-result',
@@ -9,9 +12,18 @@ export class ResultComponent implements OnInit {
 
   @Input() band: any = {};
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: BandsDataService
+  ) {
+    this.route.params.subscribe(params => {
+      this.band = this.service.getId(params['id'])
+    })
+  }
 
   ngOnInit(): void {
   }
-
+  deleteCard() {
+    console.log('delete')
+  }
 }
