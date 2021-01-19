@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px;
+    height: 100vh;
+    @media (min-width: 500px) {
+        background: #74ebd5;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
     &__title {
+        font-family: 'Potta One', cursive;
         text-transform: uppercase;
         padding: 30px;
     }
@@ -11,6 +20,9 @@
         &--card {
             margin: 15px;
             border: 2px solid blue;
+            @media (min-width: 500px) {
+                border: none;
+            }
         }
         @media (min-width: 500px) {
             display: grid;

@@ -10,11 +10,14 @@
 .content,
 .btn {
     display: flex;
-    margin: 20% auto 32px;
+    margin: 50% auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+    @media (min-width: 780px) {
+        margin: 20% auto 10%;
+    }
 }
 
 .card-container {
@@ -61,6 +64,15 @@
 
 .card.card.highlight-card span {
     margin-left: 60px;
+}
+
+.animate__bounceInDown {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounce;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s;
+    /* don't forget to set a duration! */
 }
 
 
