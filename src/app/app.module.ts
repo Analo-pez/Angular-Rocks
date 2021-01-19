@@ -10,9 +10,9 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { SearchComponent } from './components/search/search.component';
 import { Embed } from './pipes/embed.pipe';
-import { FilterPipe } from './pipes/filter.pipe';
 import { AddBandComponent } from './components/add-band/add-band.component';
 import { ResultComponent } from './components/result/result.component';
+
 
 
 
@@ -24,7 +24,6 @@ import { ResultComponent } from './components/result/result.component';
     BandDetailComponent,
     DomseguroPipe,
     Embed,
-    FilterPipe,
     SearchComponent,
     AddBandComponent,
     ResultComponent,

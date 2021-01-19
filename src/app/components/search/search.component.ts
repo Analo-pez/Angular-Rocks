@@ -12,17 +12,25 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   bands: Band[];
+  showPage = false;
+
+  text = '';
 
   constructor(private dataService: BandsDataService,
-    private router: Router) { }
-
-  ngOnInit(): void {
+    private router: Router) {
   }
 
-  search() {
+  ngOnInit(): void {
+
     this.bands = this.dataService.getBand();
-    // this.router.navigate(['app-search']);
-    console.log('hola')
+  }
+
+  searchFunction(text) {
+    this.showPage = true;
+    this.bands = this.bands.filter(e => {
+      return e.name.toLocaleLowerCase().includes(text)
+        || e.name.toLowerCase().indexOf(text.toLowerCase()) >= 0;
+    });
   }
 
 }
