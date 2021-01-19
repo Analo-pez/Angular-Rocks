@@ -18,7 +18,7 @@
     </h1>
     <section class="pageList__results">
 
-        <app-result [band]="band" *ngFor="let band of bands, index as i"></app-result>
+        <app-result [band]="band" *ngFor="let band of bands, index as i" (click)="delete(i)"></app-result>
 
     </section>
 </main>

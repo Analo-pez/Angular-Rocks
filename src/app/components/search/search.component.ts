@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BandsDataService } from '../../services/bands-data.service';
 import { Band } from '../../models/band';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,8 +15,7 @@ export class SearchComponent implements OnInit {
 
   text = '';
 
-  constructor(private dataService: BandsDataService,
-    private router: Router) {
+  constructor(private dataService: BandsDataService) {
   }
 
   ngOnInit(): void {
@@ -25,7 +23,7 @@ export class SearchComponent implements OnInit {
     this.bands = this.dataService.getBand();
   }
 
-  searchFunction(text) {
+  searchFunction(text: string) {
     this.showPage = true;
     this.bands = this.bands.filter(e => {
       return e.name.toLocaleLowerCase().includes(text)

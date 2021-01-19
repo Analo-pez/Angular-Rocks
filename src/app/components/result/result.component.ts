@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { element } from 'protractor';
 import { BandsDataService } from '../../services/bands-data.service';
 
 
@@ -23,7 +24,17 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   deleteCard() {
+    // let index = 0;
+    // for (let b of this.band) {
+    //   if (b.id == this.band.id) {
+    //     this.band[index].splice(index, 1);
+    //   }
+    //   index++;
+    // }
+    // this.band = this.band.splice(index, 1)
     console.log('delete')
+
   }
 }

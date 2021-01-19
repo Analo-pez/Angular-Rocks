@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BandsDataService } from '../../services/bands-data.service';
+import { Band } from '../../models/band';
 
 @Component({
   selector: 'app-add-band',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBandComponent implements OnInit {
 
-  constructor() { }
+  bands: Band[];
+
+
+  constructor(private dataService: BandsDataService) { }
+
 
   ngOnInit(): void {
+    this.bands = this.dataService.getBand();
   }
-
 }
