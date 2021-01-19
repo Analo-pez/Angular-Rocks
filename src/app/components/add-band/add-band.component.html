@@ -1,25 +1,34 @@
 <main class="pageAdd">
     <h3 class="pageAdd__title">Create new band</h3>
     <form (ngSubmit)="onSubmit(registerForm)" class="form" #registerForm="ngForm">
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['first'].errors">Required</span>
         <div class="form-group">
             <label for="fistNameInput">Name</label>
             <input type="text" class="form-control" id="nameInput" [(ngModel)]="bandsAdd.name" name="first" required>
         </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['description'].errors">Required</span>
         <div class="form-group">
             <label for="descriptionInput">Description</label>
-            <textarea type="text" class="form-control" id="descriptionInput" name="last" [(ngModel)]="bandsAdd.description" required></textarea>
+            <textarea type="text" class="form-control" id="descriptionInput" name="description" [(ngModel)]="bandsAdd.description" required></textarea>
         </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['link'].errors">Required</span>
         <div class="form-group">
             <label for="linkInput">Link</label>
-            <input type="text" class="form-control" id="linkInput" [(ngModel)]="bandsAdd.link" name="link">
+            <input type="text" class="form-control" id="linkInput" [(ngModel)]="bandsAdd.link" name="link" required>
         </div>
-
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary m-3">Create</button>
     </form>
     <h1 class="pageList__title">
         New bands created
     </h1>
     <section class="pageList__results">
-        <app-result *ngFor="let band of arrayBands, index as i" (click)="delete(i)"></app-result>
+        <div class="card pageList__results--card" style="width: 18rem;" *ngFor="let band of arrayBands, index as i">
+            <div class="card-body">
+                <h5 class="card-title">{{band.name}}</h5>
+                <p class="card-text">{{band.description}}</p>
+                <a href="{{band.link}}" class="btn btn-primary" target="_blank">Video Link</a>
+            </div>
+        </div>
+        <!-- <app-result [band]="band" *ngFor="let band of arrayBands, index as i" (click)="delete(i)"></app-result> -->
     </section>
 </main>
