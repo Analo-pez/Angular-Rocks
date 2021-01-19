@@ -1,7 +1,12 @@
-<div class="row">
-    <div class="col">
-        <input type="text" class="form-control" placeholder="search" #word>
+<main class="pageSearch">
+    <div class="row">
+        <div class="col">
+            <input type="search" class="form-control" placeholder="search" (keyup)="search()" #word>
+        </div>
+        <ul *ngFor="let band of bands | filter">
+            <li>{{band.name}}</li>
+        </ul>
     </div>
-</div>
+</main>
 
-<!-- (keyup)="search(word.value)" -->
+<!-- (keyup)=" search(word.value) " -->

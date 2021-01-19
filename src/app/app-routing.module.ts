@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListBandsComponent } from './components/list-bands/list-bands.component';
 import { LandingComponent } from './components/landing/landing.component'
 import { BandDetailComponent } from './components/band-detail/band-detail.component';
+import { SearchComponent } from './components/search/search.component';
+import { AddBandComponent } from './components/add-band/add-band.component';
+
 
 
 
@@ -20,11 +23,14 @@ const routes: Routes = [
   {
     path: 'app-list-bands',
     component: ListBandsComponent,
-    // children: [
-    //   {
-    //     path: ':id', component: BandDetailComponent
-    //   },
-    // ]
+  },
+  {
+    path: 'app-search',
+    component: SearchComponent,
+  },
+  {
+    path: 'app-add-band',
+    component: AddBandComponent,
   }
 ];
 
