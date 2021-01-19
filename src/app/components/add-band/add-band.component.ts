@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BandsDataService } from '../../services/bands-data.service';
 import { Band } from '../../models/band';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-band',
@@ -9,13 +10,28 @@ import { Band } from '../../models/band';
 })
 export class AddBandComponent implements OnInit {
 
-  bands: Band[];
+  bandsAdd: Band;
+
+  arrayBands = [];
 
 
-  constructor(private dataService: BandsDataService) { }
+  constructor(private dataService: BandsDataService) {
+    this.bandsAdd = JSON.parse(localStorage.getItem('band'));
+  }
 
 
   ngOnInit(): void {
-    this.bands = this.dataService.getBand();
+    this.bandsAdd = new Band();
+    this.arrayBands;
+
   }
+
+
+  onSubmit(form: NgForm) {
+    localStorage.setItem('band', JSON.stringify(this.bandsAdd))
+    this.arrayBands.push(this.bandsAdd)
+    console.log(this.arrayBands)
+
+  }
+
 }
