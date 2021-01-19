@@ -8,6 +8,8 @@ import { LandingComponent } from './components/landing/landing.component'
 import { HttpClientModule } from '@angular/common/http';
 import { BandDetailComponent } from './components/band-detail/band-detail.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { Embed } from './pipes/embed.pipe';
 
 
 
@@ -18,6 +20,8 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     LandingComponent,
     BandDetailComponent,
     DomseguroPipe,
+    Embed,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
