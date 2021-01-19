@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
 
   search() {
     this.bands = this.dataService.getBand();
-    this.router.navigate(['app-search']);
+    // this.router.navigate(['app-search']);
     console.log('hola')
   }
 

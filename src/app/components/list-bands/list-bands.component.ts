@@ -6,7 +6,6 @@ import { Band } from '../../models/band';
 @Component({
   selector: 'app-list-bands',
   templateUrl: './list-bands.component.html',
-  styleUrls: ['./list-bands.component.scss'],
   providers: [BandsDataService]
 })
 export class ListBandsComponent implements OnInit {

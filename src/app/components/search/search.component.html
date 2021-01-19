@@ -3,9 +3,9 @@
         <div class="col">
             <input type="search" class="form-control" placeholder="search" (keyup)="search()" #word>
         </div>
-        <ul *ngFor="let band of bands | filter">
-            <li>{{band.name}}</li>
-        </ul>
+        <section class="pageList__results">
+            <app-result [band]="band" *ngFor="let band of bands, index as i" [routerLink]="['/app-band-detail', i ]"></app-result>
+        </section>
     </div>
 </main>
 

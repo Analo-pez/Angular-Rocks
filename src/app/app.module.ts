@@ -12,6 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 import { Embed } from './pipes/embed.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { AddBandComponent } from './components/add-band/add-band.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 
@@ -26,6 +27,7 @@ import { AddBandComponent } from './components/add-band/add-band.component';
     FilterPipe,
     SearchComponent,
     AddBandComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
