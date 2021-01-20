@@ -4,4 +4,13 @@ export class Band {
     name: string;
     description: string;
     link: string;
+
+    constructor(nameBand: string, descBand: string, linkBand: string) {
+
+        this.id = new Date().getTime();
+        this.name = nameBand;
+        this.description = descBand;
+        this.link = linkBand;
+
+    }
 }

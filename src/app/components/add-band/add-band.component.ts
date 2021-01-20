@@ -30,13 +30,14 @@ export class AddBandComponent implements OnInit {
     private localService: LocalstorageService) {
 
     this.newBand = JSON.parse(localStorage.getItem('band'));
-    console.log(this.newBand)
+
   }
 
 
   ngOnInit(): void {
-    this.newBand = new Band();
-
+    this.newBand = new Band('', '', '');
+    // this.newBand = this.localService.getLocal('band');
+    console.log(this.newBand.id)
   }
 
 
