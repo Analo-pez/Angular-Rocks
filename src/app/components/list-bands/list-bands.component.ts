@@ -19,13 +19,13 @@ export class ListBandsComponent implements OnInit {
     this.bands = this.dataService.getBand();
   }
 
-  delete(i: any) {
-    for (let b of this.bands) {
-      if (b.id === this.bands[i].id) {
-        this.bands.splice(i, 1);
-      }
-    }
-    console.log(this.bands)
-  }
+  // delete(i: any) {
+  //   for (let b of this.bands) {
+  //     if (b.id === this.bands[i].id) {
+  //       this.bands.splice(i, 1);
+  //     }
+  //   }
+  //   console.log(this.bands)
+  // }
 
 }
