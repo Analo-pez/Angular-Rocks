@@ -13,25 +13,29 @@ import { LocalstorageService } from '../../services/localstorage.service';
 })
 export class AddBandComponent implements OnInit {
 
-  bandsAdd: Band;
+  newBand: Band;
 
   arrayBands = [{
     name: "Dire Straits",
     description: "Big group, better musicians",
     link: "https://www.youtube.com/watch?v=8Pa9x9fZBtY"
+  }, {
+    name: "Metallica",
+    description: "Big group, better musicians",
+    link: "https://www.youtube.com/watch?v=tAGnKpE4NCI"
   }];
 
 
   constructor(private dataService: BandsDataService,
     private localService: LocalstorageService) {
 
-    this.bandsAdd = JSON.parse(localStorage.getItem('band'));
-    console.log(this.bandsAdd)
+    this.newBand = JSON.parse(localStorage.getItem('band'));
+    console.log(this.newBand)
   }
 
 
   ngOnInit(): void {
-    this.bandsAdd = new Band();
+    this.newBand = new Band();
 
   }
 
@@ -41,8 +45,8 @@ export class AddBandComponent implements OnInit {
       return;
     }
     else {
-      this.localService.setLocal('band', this.bandsAdd);
-      this.arrayBands.push(this.bandsAdd);
+      this.localService.setLocal('band', this.newBand);
+      this.arrayBands.push(this.newBand);
       console.log(this.arrayBands);
     }
 

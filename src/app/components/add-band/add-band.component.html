@@ -4,17 +4,17 @@
         <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['first'].errors">Required</span>
         <div class="form-group">
             <label for="fistNameInput">Name</label>
-            <input type="text" class="form-control" id="nameInput" [(ngModel)]="bandsAdd.name" name="first" required>
+            <input type="text" class="form-control" id="nameInput" [(ngModel)]="newBand.name" name="first" required>
         </div>
         <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['description'].errors">Required</span>
         <div class="form-group">
             <label for="descriptionInput">Description</label>
-            <textarea type="text" class="form-control" id="descriptionInput" name="description" [(ngModel)]="bandsAdd.description" required></textarea>
+            <textarea type="text" class="form-control" id="descriptionInput" name="description" [(ngModel)]="newBand.description" required></textarea>
         </div>
         <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['link'].errors">Required</span>
         <div class="form-group">
             <label for="linkInput">Link</label>
-            <input type="text" class="form-control" id="linkInput" [(ngModel)]="bandsAdd.link" name="link" required>
+            <input type="text" class="form-control" id="linkInput" [(ngModel)]="newBand.link" name="link" required>
         </div>
         <button type="submit" class="btn btn-primary m-3">Create</button>
     </form>
