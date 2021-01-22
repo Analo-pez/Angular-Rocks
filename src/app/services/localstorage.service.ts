@@ -1,41 +1,43 @@
 import { Injectable } from '@angular/core';
+import { Band } from '../models/band';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalstorageService {
 
-  constructor() { }
+  lists: Band[] = [];
 
-  setLocal(key: string, data: any) {
-    try {
-      localStorage.setItem('band', JSON.stringify(data))
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  getLocal(key: string) {
-    try {
-      return JSON.parse(localStorage.getItem(key))
-    } catch (e) {
-      console.log(e);
-    }
+  constructor() {
+
   }
 
-  removeLocal(key: string): void {
-    try {
-      localStorage.removeItem(key)
-    } catch (e) {
-      console.log(e);
-    }
+
+  createList(nameBand: string, descBand: string, linkBand: string) {
+    const list3 = new Band(nameBand, descBand, linkBand);
+    this.lists.push(list3);
+    this.saveStorage();
+
+    return list3.id
   }
 
-  clearLocal() {
-    try {
-      localStorage.clear();
-    } catch (e) {
-      console.log(e);
-    }
+  // deleteList(list: List) {
+  //   this.lists = this.lists.filter(listFromData => listFromData.id !== list.id);
+  //   this.saveStorage();
+  // }
+
+  getList(id: string | number) {
+    id = Number(id);
+    return this.lists.find(listData =>
+      listData.id === id);
+
   }
+
+
+  saveStorage() {
+    localStorage.setItem('data', JSON.stringify(this.lists))
+  }
+
+
 
 }

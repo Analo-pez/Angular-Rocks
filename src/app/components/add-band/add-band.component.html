@@ -1,5 +1,5 @@
 <main class="pageAdd">
-    <h3 class="pageAdd__title">Create new band</h3>
+    <h1 class="pageAdd__title">Create new band</h1>
     <form (ngSubmit)="onSubmit(registerForm)" class="form" #registerForm="ngForm">
         <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['first'].errors">Required</span>
         <div class="form-group">
@@ -16,19 +16,7 @@
             <label for="linkInput">Link</label>
             <input type="text" class="form-control" id="linkInput" [(ngModel)]="newBand.link" name="link" required>
         </div>
-        <button type="submit" class="btn btn-primary m-3">Create</button>
+        <button mat-raised-button type="submit" class="btn btn-primary m-3">Create</button>
     </form>
-    <h1 class="pageList__title">
-        New bands created
-    </h1>
-    <section class="pageList__results">
-        <div class="card pageList__results--card" style="width: 18rem;" *ngFor="let band of arrayBands, index as i">
-            <div class="card-body">
-                <h5 class="card-title">{{band.name}}</h5>
-                <p class="card-text">{{band.description}}</p>
-                <a href="{{band.link}}" class="btn btn-primary" target="_blank">Video Link</a>
-            </div>
-        </div>
-        <!-- <app-result [band]="band" *ngFor="let band of arrayBands, index as i" (click)="delete(i)"></app-result> -->
-    </section>
+
 </main>

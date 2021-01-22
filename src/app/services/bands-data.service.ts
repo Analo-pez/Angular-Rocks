@@ -11,7 +11,11 @@ export class BandsDataService {
   constructor() { }
 
   getBand(): Band[] {
-    return BAND;
+    if (localStorage.getItem('data')) {
+      return JSON.parse(localStorage.getItem('data'))
+    } else {
+      return BAND;
+    }
   }
   getId(id: number) {
     return BAND[id];

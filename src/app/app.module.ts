@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { SearchComponent } from './components/search/search.component';
 import { Embed } from './pipes/embed.pipe';
 import { AddBandComponent } from './components/add-band/add-band.component';
 import { ResultComponent } from './components/result/result.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -33,9 +36,12 @@ import { ResultComponent } from './components/result/result.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddBandComponent]
 })
 export class AppModule { }
