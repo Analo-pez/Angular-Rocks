@@ -34,14 +34,10 @@ export class ListBandsComponent implements OnInit {
   }
 
 
-
-  // delete(i: any) {
-  //   for (let b of this.bands) {
-  //     if (b.id === this.bands[i].id) {
-  //       this.bands.splice(i, 1);
-  //     }
-  //   }
-  //   console.log(this.bands)
-  // }
-
+  deleteCard(i: number) {
+    this.bands = this.bands.filter(listFromData => listFromData.id !== i);
+    localStorage.setItem('data', JSON.stringify(this.bands));
+  }
 }
+
+

@@ -18,23 +18,12 @@ export class ResultComponent implements OnInit {
     private service: BandsDataService
   ) {
     this.route.params.subscribe(params => {
-      this.band = this.service.getId(params['id'])
+      this.band = this.service.getBand();
     })
   }
 
   ngOnInit(): void {
   }
 
-  deleteCard() {
-    // let index = 0;
-    // for (let b of this.band) {
-    //   if (b.id == this.band.id) {
-    //     this.band[index].splice(index, 1);
-    //   }
-    //   index++;
-    // }
-    // this.band = this.band.splice(index, 1)
-    console.log('delete')
 
-  }
 }

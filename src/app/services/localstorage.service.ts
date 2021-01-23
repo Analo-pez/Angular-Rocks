@@ -21,10 +21,6 @@ export class LocalstorageService {
     return list3.id
   }
 
-  // deleteList(list: List) {
-  //   this.lists = this.lists.filter(listFromData => listFromData.id !== list.id);
-  //   this.saveStorage();
-  // }
 
   getList(id: string | number) {
     id = Number(id);
