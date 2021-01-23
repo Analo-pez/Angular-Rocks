@@ -1,0 +1,13 @@
+{
+  "appId": "com.example.app",
+  "appName": "Angular-Rocks",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/Angular-Rocks",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
