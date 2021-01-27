@@ -2,10 +2,13 @@
 
 const express = require('express');
 const cors = require('cors');
+const data = require('./data');
+const apiBands = require('./api/bands');
 
 
 console.clear();
 
+data.init();
 
 const server = express();
 server.use(cors());
@@ -15,3 +18,5 @@ const serverPort = 4000;
 server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
+
+server.get('/api/bands', apiBands.getBands);
