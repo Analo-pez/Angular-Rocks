@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BandsDataService } from '../../services/bands-data.service';
 import { Band } from '../../models/band';
 import { NgForm } from '@angular/forms';
-import { LocalstorageService } from '../../services/localstorage.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
 
@@ -20,12 +19,11 @@ export class AddBandComponent implements OnInit {
 
 
   constructor(private dataService: BandsDataService,
-    private localService: LocalstorageService,
     public dialogRef: MatDialogRef<AddBandComponent>) {
 
     this.newBand = JSON.parse(localStorage.getItem('data'));
 
-    this.arrayBands = this.dataService.getBand();
+    this.arrayBands = this.dataService.getBands();
   }
 
 
@@ -40,11 +38,11 @@ export class AddBandComponent implements OnInit {
       return;
     }
     else {
-      this.arrayBands.push(this.newBand);
-      localStorage.setItem('data', JSON.stringify(this.arrayBands));
+      // this.arrayBands.push(this.newBand);
+      // localStorage.setItem('data', JSON.stringify(this.arrayBands));
       this.dialogRef.close();
     }
-    location.reload();
+    // location.reload();
   }
 
 }

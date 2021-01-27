@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { element } from 'protractor';
 import { BandsDataService } from '../../services/bands-data.service';
 
 
@@ -18,7 +17,7 @@ export class ResultComponent implements OnInit {
     private service: BandsDataService
   ) {
     this.route.params.subscribe(params => {
-      this.band = this.service.getBand();
+      this.band = this.service.getBands();
     })
   }
 

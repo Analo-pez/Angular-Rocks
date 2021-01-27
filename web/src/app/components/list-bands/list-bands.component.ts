@@ -21,7 +21,12 @@ export class ListBandsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.bands = this.dataService.getBand();
+    this.bands = this.dataService.getBands()
+      .subscribe((data: any) => {
+        this.bands = data.results;
+        console.log(this.bands)
+
+      })
   }
 
 

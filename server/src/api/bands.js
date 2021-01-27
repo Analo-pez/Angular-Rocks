@@ -7,7 +7,7 @@ const getBands = (req, res) => {
     const bands =
         bandsData.getAllBands();
     console.log('GET:/api/bands > bands:', bands);
-    res.json({ bands: bands });
+    res.json({ results: bands });
 };
 
 

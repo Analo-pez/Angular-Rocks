@@ -9,7 +9,6 @@ import { BandsDataService } from '../../services/bands-data.service';
 })
 export class BandDetailComponent implements OnInit {
 
-  // bandId: any = [];
   @Input() bandId: any = {};
 
   constructor(
@@ -17,7 +16,10 @@ export class BandDetailComponent implements OnInit {
     private service: BandsDataService
   ) {
     this.route.params.subscribe(params => {
-      this.bandId = this.service.getId(params['id'])
+      this.bandId = this.service.getBands().subscribe(data => {
+        this.bandId = data.results[params['id'] - 1];
+        // provisional hasta arreglar index
+      })
     })
 
   }
