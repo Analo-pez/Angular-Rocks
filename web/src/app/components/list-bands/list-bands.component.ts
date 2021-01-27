@@ -37,10 +37,10 @@ export class ListBandsComponent implements OnInit {
   }
 
 
-  deleteCard(i: number) {
-    this.bands = this.bands.filter(listFromData => listFromData.id !== i);
-    // localStorage.setItem('data', JSON.stringify(this.bands));
-  }
+  // deleteCard(i: number) {
+  //   this.bands = this.bands.filter(listFromData => listFromData.id !== i);
+  //   // localStorage.setItem('data', JSON.stringify(this.bands));
+  // }
 }
 
 

@@ -29,15 +29,24 @@ const getAllNewBands = () => {
 
 const addNewBands = (name, description, link) => {
     const insertStmt = data.db.prepare(
-        `INSERT INTO newBands (name, description, link) VALUES(?, ?, ?)`
+        `INSERT INTO bands (name, description, link) VALUES(?, ?, ?)`
     );
-    const bandCreated = insertStmt.run(name, description, link);
-    console.log(bandCreated);
+    insertStmt.run(name, description, link);
+
 };
+
+
+// const deleteBand = (req, res) => {
+//     const deleteStmt = data.db.prepare(`DELETE FROM newBands WHERE id = ?`, [req.params.id]);
+//     deleteStmt.run(req.params.id);
+
+// };
+
 
 
 module.exports = {
     getAllBands: getAllBands,
     getAllNewBands: getAllNewBands,
     addNewBands: addNewBands,
+    // deleteBand: deleteBand
 };

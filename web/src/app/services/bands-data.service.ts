@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Band } from '../models/band';
 
 
@@ -27,14 +28,15 @@ export class BandsDataService {
   postNewBands(band: Band): any {
     return this.http.post('http://localhost:4000/api/newBands', band);
 
-
   }
 
-  // deleteBand(i: number) {
-  //   this.bands = this.bands.filter(listFromData => listFromData.id !== i);
-  //   localStorage.setItem('data', JSON.stringify(this.bands));
-  // }
+  // deleteBands(id: number): Observable<any> {
 
+  //   const headers = new HttpHeaders().set(
+  //     'Content-Type', 'application/json'
+  //   )
+  //   return this.http.delete('http://localhost:4000/api/newBands/' + id, { headers: headers });
+  // }
 
 
 

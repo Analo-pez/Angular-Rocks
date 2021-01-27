@@ -24,5 +24,12 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteCard(id: number) {
+    // this.service.deleteBands(id)
+    //   .subscribe();
+    console.log('Eliminado', id)
+    // this.band = this.band.filter(b => b.id !== id);
+
+  }
 
 }

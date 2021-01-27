@@ -24,10 +24,19 @@ const postNewBand = (req, res) => {
 };
 
 
+// const deleteRockBand = (req, res) => {
+//     const bandId = req.params.id;
+//     bandsData.deleteBands(bandId);
+//     res.json({ results: 'deleted band' });
+
+// };
+
+
 
 
 module.exports = {
     getBands: getBands,
     getNewBands: getNewBands,
     postNewBand: postNewBand,
+    // deleteRockBand: deleteRockBand
 };

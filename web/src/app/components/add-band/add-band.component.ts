@@ -42,9 +42,7 @@ export class AddBandComponent implements OnInit {
     }
     else {
       this.dataService.postNewBands(this.newBand)
-        .subscribe(resp => {
-          console.log(resp)
-        })
+        .subscribe()
       this.dialogRef.close();
     }
     location.reload();
