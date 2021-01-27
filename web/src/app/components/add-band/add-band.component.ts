@@ -21,9 +21,12 @@ export class AddBandComponent implements OnInit {
   constructor(private dataService: BandsDataService,
     public dialogRef: MatDialogRef<AddBandComponent>) {
 
-    this.newBand = JSON.parse(localStorage.getItem('data'));
 
-    this.arrayBands = this.dataService.getBands();
+    this.arrayBands = this.dataService.getNewBands()
+      .subscribe((data: any) => {
+        this.arrayBands = data.results;
+        console.log(this.arrayBands)
+      })
   }
 
 
@@ -38,11 +41,13 @@ export class AddBandComponent implements OnInit {
       return;
     }
     else {
-      // this.arrayBands.push(this.newBand);
-      // localStorage.setItem('data', JSON.stringify(this.arrayBands));
+      this.dataService.postNewBands(this.newBand)
+        .subscribe(resp => {
+          console.log(resp)
+        })
       this.dialogRef.close();
     }
-    // location.reload();
+    location.reload();
   }
 
 }

@@ -12,11 +12,32 @@ const getAllBands = () => {
         band.id = band.id + '';
         return band;
     });
-    // const user = stmt.get(id);
-    // return stmt;
+};
+
+
+const getAllNewBands = () => {
+    const stmt = data.db.prepare('SELECT * FROM newBands');
+
+    const newBands = stmt.all();
+    return newBands.map(band => {
+        // ids must be a string
+        band.id = band.id + '';
+        return band;
+    });
+};
+
+
+const addNewBands = (name, description, link) => {
+    const insertStmt = data.db.prepare(
+        `INSERT INTO newBands (name, description, link) VALUES(?, ?, ?)`
+    );
+    const bandCreated = insertStmt.run(name, description, link);
+    console.log(bandCreated);
 };
 
 
 module.exports = {
     getAllBands: getAllBands,
+    getAllNewBands: getAllNewBands,
+    addNewBands: addNewBands,
 };

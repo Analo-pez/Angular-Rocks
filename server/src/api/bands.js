@@ -6,28 +6,28 @@ const bandsData = require('../data/bands');
 const getBands = (req, res) => {
     const bands =
         bandsData.getAllBands();
-    console.log('GET:/api/bands > bands:', bands);
+    // console.log('GET:/api/bands > bands:', bands);
+    res.json({ results: bands });
+};
+
+const getNewBands = (req, res) => {
+    const bands =
+        bandsData.getAllNewBands();
     res.json({ results: bands });
 };
 
 
-// const getBand = (req, res) => {
-//     const bandFound = bandsData.getAllBands();
-//     console.log('GET:/api/user > userFound:', bandFound);
-//     if (bandFound) {
-//         res.json({
-//             bandName: bandFound.user,
-//             description: bandFound.description,
+const postNewBand = (req, res) => {
+    bandsData.addNewBands(req.body.name, req.body.description, req.body.link);
+    res.json({ results: 'created new band' });
 
-//         });
-//     } else {
-//         res.status(404).json({
-//             error: 'user-not-found',
-//             message: 'User not found'
-//         });
-//     }
-// };
+};
+
+
+
 
 module.exports = {
     getBands: getBands,
+    getNewBands: getNewBands,
+    postNewBand: postNewBand,
 };

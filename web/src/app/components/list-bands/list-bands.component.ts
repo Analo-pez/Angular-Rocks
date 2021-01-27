@@ -24,8 +24,6 @@ export class ListBandsComponent implements OnInit {
     this.bands = this.dataService.getBands()
       .subscribe((data: any) => {
         this.bands = data.results;
-        console.log(this.bands)
-
       })
   }
 
@@ -41,7 +39,7 @@ export class ListBandsComponent implements OnInit {
 
   deleteCard(i: number) {
     this.bands = this.bands.filter(listFromData => listFromData.id !== i);
-    localStorage.setItem('data', JSON.stringify(this.bands));
+    // localStorage.setItem('data', JSON.stringify(this.bands));
   }
 }
 
