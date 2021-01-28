@@ -21,11 +21,9 @@ export class AddBandComponent implements OnInit {
   constructor(private dataService: BandsDataService,
     public dialogRef: MatDialogRef<AddBandComponent>) {
 
-
-    this.arrayBands = this.dataService.getNewBands()
+    this.arrayBands = this.dataService.getBands()
       .subscribe((data: any) => {
         this.arrayBands = data.results;
-        console.log(this.arrayBands)
       })
   }
 

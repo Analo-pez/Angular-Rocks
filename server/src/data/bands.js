@@ -1,6 +1,5 @@
 'use strict';
 
-const { query } = require('express');
 const data = require('./index');
 
 
@@ -9,23 +8,11 @@ const getAllBands = () => {
 
     const bands = stmt.all();
     return bands.map(band => {
-        // ids must be a string
         band.id = band.id + '';
         return band;
     });
 };
 
-
-const getAllNewBands = () => {
-    const stmt = data.db.prepare('SELECT * FROM newBands');
-
-    const newBands = stmt.all();
-    return newBands.map(band => {
-        // ids must be a string
-        band.id = band.id + '';
-        return band;
-    });
-};
 
 
 const addNewBands = (name, description, link) => {
@@ -46,7 +33,6 @@ const deleteBand = (req, res) => {
 
 module.exports = {
     getAllBands: getAllBands,
-    getAllNewBands: getAllNewBands,
     addNewBands: addNewBands,
     deleteBand: deleteBand
 };

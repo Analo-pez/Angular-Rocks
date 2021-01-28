@@ -1,18 +1,11 @@
 const bandsData = require('../data/bands');
 
 
-// endpoint handler GET:/api/Users
 
 const getBands = (req, res) => {
     const bands =
         bandsData.getAllBands();
     // console.log('GET:/api/bands > bands:', bands);
-    res.json({ results: bands });
-};
-
-const getNewBands = (req, res) => {
-    const bands =
-        bandsData.getAllNewBands();
     res.json({ results: bands });
 };
 
@@ -25,7 +18,6 @@ const postNewBand = (req, res) => {
 
 
 const deleteRockBand = (req, res) => {
-    console.log(req.query)
     bandsData.deleteBand(req.query);
     res.status(200).send({
         message: "todo ok"
@@ -34,10 +26,8 @@ const deleteRockBand = (req, res) => {
 
 
 
-
 module.exports = {
     getBands: getBands,
-    getNewBands: getNewBands,
     postNewBand: postNewBand,
     deleteRockBand: deleteRockBand
 };

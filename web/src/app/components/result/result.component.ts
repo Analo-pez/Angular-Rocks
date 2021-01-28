@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BandsDataService } from '../../services/bands-data.service';
+
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ResultComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: BandsDataService
+    private service: BandsDataService,
+    private router: Router
   ) {
     this.route.params.subscribe(params => {
       this.band = this.service.getBands();
@@ -27,8 +29,7 @@ export class ResultComponent implements OnInit {
   deleteCard(id: number) {
     this.service.deleteBands(id)
       .subscribe();
-    console.log('Eliminado', id)
-    // this.band = this.band.filter(b => b.id !== id);
+    this.router.navigate(['app-list-bands']);
 
   }
 
