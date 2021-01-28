@@ -14,13 +14,10 @@ export class ResultComponent implements OnInit {
   @Input() band: any = {};
 
   constructor(
-    private route: ActivatedRoute,
     private service: BandsDataService,
     private router: Router
   ) {
-    this.route.params.subscribe(params => {
-      this.band = this.service.getBands();
-    })
+
   }
 
   ngOnInit(): void {

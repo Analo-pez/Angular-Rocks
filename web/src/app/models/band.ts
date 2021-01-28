@@ -7,7 +7,8 @@ export class Band {
 
     constructor(nameBand: string, descBand: string, linkBand: string) {
 
-        this.id = new Date().getTime();
+        // this.id = new Date().getTime();
+        this.id;
         this.name = nameBand;
         this.description = descBand;
         this.link = linkBand;
