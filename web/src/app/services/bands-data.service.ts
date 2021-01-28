@@ -30,13 +30,13 @@ export class BandsDataService {
 
   }
 
-  // deleteBands(id: number): Observable<any> {
+  deleteBands(id: number): Observable<any> {
 
-  //   const headers = new HttpHeaders().set(
-  //     'Content-Type', 'application/json'
-  //   )
-  //   return this.http.delete('http://localhost:4000/api/newBands/' + id, { headers: headers });
-  // }
+    const headers = new HttpHeaders().set(
+      'Content-Type', 'application/json'
+    )
+    return this.http.delete('http://localhost:4000/api/deleteBand?id=' + id, { headers: headers });
+  }
 
 
 

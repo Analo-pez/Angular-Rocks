@@ -1,5 +1,6 @@
 'use strict';
 
+const { query } = require('express');
 const data = require('./index');
 
 
@@ -36,11 +37,10 @@ const addNewBands = (name, description, link) => {
 };
 
 
-// const deleteBand = (req, res) => {
-//     const deleteStmt = data.db.prepare(`DELETE FROM newBands WHERE id = ?`, [req.params.id]);
-//     deleteStmt.run(req.params.id);
-
-// };
+const deleteBand = (req, res) => {
+    const deleteStmt = data.db.prepare(`DELETE FROM bands WHERE id=?`);
+    deleteStmt.run(req.id);
+};
 
 
 
@@ -48,5 +48,5 @@ module.exports = {
     getAllBands: getAllBands,
     getAllNewBands: getAllNewBands,
     addNewBands: addNewBands,
-    // deleteBand: deleteBand
+    deleteBand: deleteBand
 };
