@@ -13,14 +13,14 @@ export class BandsDataService {
   constructor(private http: HttpClient) { }
 
   getBands(): any {
-    const url = this.http.get('http://localhost:4000/api/bands');
+    const url = this.http.get('/api/bands');
 
     return url;
   }
 
 
   postNewBands(band: Band): any {
-    return this.http.post('http://localhost:4000/api/newBands', band);
+    return this.http.post('/api/newBands', band);
 
   }
 
@@ -29,11 +29,11 @@ export class BandsDataService {
     const headers = new HttpHeaders().set(
       'Content-Type', 'application/json'
     )
-    return this.http.delete('http://localhost:4000/api/deleteBand?id=' + id, { headers: headers });
+    return this.http.delete('/api/deleteBand?id=' + id, { headers: headers });
   }
 
   getOneBand(id: number): Observable<any> {
-    return this.http.get('http://localhost:4000/api/bandId?id=' + id)
+    return this.http.get('/api/bandId?id=' + id)
       .pipe(map(data => {
         return data['results'][0];
       }));

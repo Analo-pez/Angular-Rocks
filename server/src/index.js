@@ -15,7 +15,7 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;;
 server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -25,3 +25,6 @@ server.post('/api/newBands', apiBands.postNewBand);
 server.delete('/api/deleteBand', apiBands.deleteRockBand);
 
 server.get('/api/bandId', apiBands.getBandId);
+
+
+server.use(express.static('./public'));
