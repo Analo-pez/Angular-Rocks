@@ -1,0 +1,10 @@
+<div class="pageSearch">
+    <div class="row">
+        <div class="col">
+            <input type="search" class="form-control" placeholder="Search" (keyup)="searchFunction(text.value)" #text>
+        </div>
+        <section *ngIf="showPage" class="pageList__results">
+            <app-result [band]="band" *ngFor="let band of bands, index as i"></app-result>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+.bodyPage {
+    background: #74ebd5;
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+}
+
+.pageList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__search {
+        display: flex;
+        align-self: flex-end;
+        margin: 15px 80px 0px 0px;
+        gap: 15px;
+    }
+    &__title {
+        font-family: 'Potta One', cursive;
+        text-transform: uppercase;
+        padding: 30px;
+    }
+    &__results {
+        &--card {
+            margin: 15px;
+            @media (min-width: 500px) {
+                border: none;
+            }
+        }
+        @media (min-width: 500px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+        @media (min-width: 780px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

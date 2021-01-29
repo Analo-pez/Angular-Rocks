@@ -1,0 +1,22 @@
+<main class="pageAdd">
+    <h1 class="pageAdd__title">Create new band</h1>
+    <form (ngSubmit)="onSubmit(registerForm)" class="form" #registerForm="ngForm">
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['first'].errors">Required</span>
+        <div class="form-group">
+            <label for="fistNameInput">Name</label>
+            <input type="text" class="form-control" id="nameInput" [(ngModel)]="newBand.name" name="first" required>
+        </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['description'].errors">Required</span>
+        <div class="form-group">
+            <label for="descriptionInput">Description</label>
+            <textarea type="text" class="form-control" id="descriptionInput" name="description" [(ngModel)]="newBand.description" required></textarea>
+        </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['link'].errors">Required</span>
+        <div class="form-group">
+            <label for="linkInput">Link</label>
+            <input type="text" class="form-control" id="linkInput" [(ngModel)]="newBand.link" name="link" required>
+        </div>
+        <button mat-raised-button type="submit" class="btn btn-primary m-3">Create</button>
+    </form>
+
+</main>
