@@ -1,6 +1,3 @@
-'use strict';
-
-const express = require('express');
 const cors = require('cors');
 const data = require('./data');
 const apiBands = require('./api/bands');
