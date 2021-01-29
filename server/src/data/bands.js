@@ -5,7 +5,6 @@ const data = require('./index');
 
 const getAllBands = () => {
     const stmt = data.db.prepare('SELECT * FROM bands');
-
     const bands = stmt.all();
     return bands.map(band => {
         band.id = band.id + '';
@@ -29,10 +28,17 @@ const deleteBand = (req, res) => {
     deleteStmt.run(req.id);
 };
 
+const getOneBand = (req, res) => {
+    const stmt = data.db.prepare('SELECT id, name, description, link FROM bands WHERE id = ?');
+    const bandId = stmt.all(req.id);
+    console.log(bandId)
+    return bandId;
 
+}
 
 module.exports = {
     getAllBands: getAllBands,
     addNewBands: addNewBands,
-    deleteBand: deleteBand
+    deleteBand: deleteBand,
+    getOneBand: getOneBand
 };

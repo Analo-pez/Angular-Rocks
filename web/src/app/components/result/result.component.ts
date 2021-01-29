@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BandsDataService } from '../../services/bands-data.service';
 
 
@@ -27,6 +27,7 @@ export class ResultComponent implements OnInit {
     this.service.deleteBands(id)
       .subscribe();
     this.router.navigate(['app-list-bands']);
+    location.reload();
 
   }
 

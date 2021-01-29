@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BandsDataService } from '../../services/bands-data.service';
 
@@ -9,16 +9,15 @@ import { BandsDataService } from '../../services/bands-data.service';
 })
 export class BandDetailComponent implements OnInit {
 
-  @Input() bandId: any = {};
+  bandId: any = {};
 
   constructor(
     private route: ActivatedRoute,
     private service: BandsDataService
   ) {
     this.route.params.subscribe(params => {
-      this.bandId = this.service.getBands().subscribe(data => {
-        this.bandId = data.results[params['id'] - 1];
-        // provisional hasta arreglar index
+      this.service.getOneBand(params.id).subscribe(data => {
+        this.bandId = data;
       })
     })
 

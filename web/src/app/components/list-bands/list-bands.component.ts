@@ -25,7 +25,6 @@ export class ListBandsComponent implements OnInit {
       .subscribe((data: any) => {
         this.bands = data.results;
       })
-
   }
 
 

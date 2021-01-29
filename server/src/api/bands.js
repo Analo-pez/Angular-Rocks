@@ -25,9 +25,18 @@ const deleteRockBand = (req, res) => {
 }
 
 
+const getBandId = (req, res) => {
+    const bandId = bandsData.getOneBand(req.query);
+    res.json({ results: bandId });
+
+}
+
+
+
 
 module.exports = {
     getBands: getBands,
     postNewBand: postNewBand,
-    deleteRockBand: deleteRockBand
+    deleteRockBand: deleteRockBand,
+    getBandId: getBandId
 };

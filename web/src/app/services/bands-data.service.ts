@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Band } from '../models/band';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -29,6 +30,13 @@ export class BandsDataService {
       'Content-Type', 'application/json'
     )
     return this.http.delete('http://localhost:4000/api/deleteBand?id=' + id, { headers: headers });
+  }
+
+  getOneBand(id: number): Observable<any> {
+    return this.http.get('http://localhost:4000/api/bandId?id=' + id)
+      .pipe(map(data => {
+        return data['results'][0];
+      }));
   }
 
 
