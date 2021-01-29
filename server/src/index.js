@@ -25,3 +25,6 @@ server.post('/api/newBands', apiBands.postNewBand);
 server.delete('/api/deleteBand', apiBands.deleteRockBand);
 
 server.get('/api/bandId', apiBands.getBandId);
+
+
+server.use(express.static('./public'));
