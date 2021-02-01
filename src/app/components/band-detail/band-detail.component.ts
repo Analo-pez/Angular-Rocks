@@ -16,7 +16,6 @@ export class BandDetailComponent implements OnInit {
     private service: BandsDataService
   ) {
     this.route.params.subscribe(params => {
-      console.log(params)
       this.service.getOneBand(params.id).subscribe(data => {
         this.bandId = data;
       })

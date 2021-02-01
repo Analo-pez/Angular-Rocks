@@ -15,7 +15,7 @@ export class AddBandComponent implements OnInit {
 
   newBand: Band;
 
-  arrayBands: any;
+  arrayBands: Array<Object>;
 
 
   constructor(private dataService: BandsDataService,
