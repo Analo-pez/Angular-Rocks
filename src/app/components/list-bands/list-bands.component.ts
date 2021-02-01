@@ -12,7 +12,8 @@ import { AddBandComponent } from '../add-band/add-band.component';
   providers: [BandsDataService]
 })
 export class ListBandsComponent implements OnInit {
-  bands: Band[];
+
+  allBands: [];
 
   loading: boolean = true;
 
@@ -23,9 +24,9 @@ export class ListBandsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.bands = this.dataService.getBands()
+    this.dataService.getBands()
       .subscribe((data: any) => {
-        this.bands = data.results;
+        this.allBands = data.results;
         this.loading = false;
       })
   }

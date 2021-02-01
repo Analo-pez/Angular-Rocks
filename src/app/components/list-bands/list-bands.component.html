@@ -18,7 +18,7 @@
     </h1>
     <app-loading *ngIf="loading"></app-loading>
     <section class="pageList__results">
-        <app-result [band]="band" *ngFor="let band of bands"></app-result>
+        <app-result [band]="band" *ngFor="let band of allBands"></app-result>
 
     </section>
 </main>
