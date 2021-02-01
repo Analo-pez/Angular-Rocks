@@ -1,0 +1,28 @@
+<section class="register">
+    <h2 class="title">
+        Register
+    </h2>
+    <form (ngSubmit)="onSubmit(registerForm)" class="form" #registerForm="ngForm">
+        <div class="form-group">
+            <label for="fistNameInput">First name</label>
+            <input type="email" class="form-control" id="fistNameInput" aria-describedby="emailHelp" [(ngModel)]="person.name" name="first">
+        </div>
+        <div class="form-group">
+            <label for="lastNameInput">Email</label>
+            <input type="email" class="form-control" id="emailInput" name="email" [(ngModel)]="person.email">
+        </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['user'].errors">El usuario es obligatorio</span>
+        <div class="form-group">
+            <label for="userNameInput">Username</label>
+            <input type="text" class="form-control" id="userNameInput" aria-describedby="emailHelp" [(ngModel)]="person.username" name="user" min-length="2" required>
+        </div>
+        <span class="msg" *ngIf="registerForm.submitted && registerForm.controls['password'].errors">La contraseña es obligatoria</span>
+        <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="current-password" class="form-control" id="userPasswordInput" [(ngModel)]="person.password" name="password" min-length="4" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a class="cancelBtn" href="#">Cancel</a>
+    </form>
+</section>
