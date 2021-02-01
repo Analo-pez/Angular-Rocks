@@ -10,7 +10,7 @@ export class Embed implements PipeTransform {
     constructor(private sanitizer: DomSanitizer) { }
 
 
-    transform(_url: any) {
+    transform(_url: any): SafeResourceUrl {
         if (!_url) { return ''; }
         if (_url) {
             _url = _url.replace('watch?v=', 'embed/');
